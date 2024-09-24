@@ -1,23 +1,27 @@
 import cards.Card;
 import cards.CardUtils;
+import cards.Suits;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class CardGame {
 
-  private final ArrayList<Card> deckOfCards = new ArrayList<>(52);
+  private ArrayList<Card> deckOfCards = new ArrayList<>(52);
   private String name;
+
   public CardGame(String name){
     this.name = name;
 
     char[] suits = {'❤', '♠', '♦', '♣'};
+   // Suits[] suits = Suits.values();
 
     for (char suit : suits) {
       for (int j = 0; j < 13; j++) {
         this.deckOfCards.add(new Card(suit, CardUtils.getCardKeys()[j]));
       }
     }
-
   }
 
   public String getName() {
@@ -26,6 +30,36 @@ public class CardGame {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+  public Card dealCard(){
+
+    Card firstCard = deckOfCards.getFirst();
+    deckOfCards.removeFirst();
+    return firstCard;
+  }
+
+  public ArrayList<Card> sortDeckInNumberOrder() {
+    ArrayList<Card> sortedDeck = deckOfCards;
+    sortedDeck.sort(Comparator.comparing(Card::getValue));
+    this.deckOfCards = sortedDeck;
+    return sortedDeck;
+  }
+
+  public ArrayList<Card> shuffleDeck(){
+    ArrayList<Card> shuffledDeck = deckOfCards;
+    Collections.shuffle(shuffledDeck);
+    return shuffledDeck;
+  }
+
+  public ArrayList<Card> sortDeckIntoSuits() {
+    ArrayList<Card> sortedSuitDeck = deckOfCards;
+
+    sortedSuitDeck.sort(Comparator.comparing(Card::getValue));
+    sortedSuitDeck.sort(Comparator.comparing(Card::getSuit));
+
+    this.deckOfCards = sortedSuitDeck;
+    return sortedSuitDeck;
   }
 
   public ArrayList<Card> getDeck() {

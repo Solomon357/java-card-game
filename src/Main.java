@@ -7,14 +7,18 @@ import java.util.ArrayList;
 public class Main {
   public static void main(String[] args) {
 
-
-
-    Card myCard = new Card("spade", "J");
-    System.out.println(myCard.toString());
-
     CardGame snap = new CardGame("Snap");
 
-    System.out.println(snap.getDeck());
-    System.out.println(snap.getCurrentDeckLength());
+    snap.sortDeckIntoSuits();
+    System.out.println("Sorted deck into suits: " + snap.getDeck());
+
+    snap.sortDeckInNumberOrder();
+    System.out.println("Sorted deck in number order: " + snap.getDeck());
+
+    snap.shuffleDeck();
+    System.out.println("shuffled in random order" + snap.getDeck());
+
+    Card myCard = snap.dealCard();
+    System.out.println("card dealt: " + myCard.toString());
   }
 }

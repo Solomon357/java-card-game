@@ -35,8 +35,4 @@ public class CardUtils {
   public static HashMap<String, Integer> getCardValueMap() {
     return cardValueMap;
   }
-
-  //  public static getRandomValue(){
-//
-//  }
 }

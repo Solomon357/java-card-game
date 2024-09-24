@@ -4,47 +4,13 @@ public class Card {
 
   private final char suit;
   private String symbol;
-  private final int value;
-
-  public Card(String suit, String key){
-    switch (suit){
-      case "heart":
-        this.suit = '❤';
-        break;
-      case "spade":
-        this.suit = '♠';
-        break;
-      case "diamond":
-        this.suit = '♦';
-        break;
-      case "clover":
-        this.suit = '♣';
-        break;
-      default:
-        this.suit = 'n';
-        break;
-    }
-
-    this.value = CardUtils.getCardValueMap().get(key);
-
-    for(String keys: CardUtils.getCardKeys()){
-      if(CardUtils.getCardValueMap().get(keys).equals(value)){
-        this.symbol = keys;
-      }
-    }
-  }
+  private final Integer value;
 
   public Card(char suit, String key){
     this.suit = suit;
     this.value = CardUtils.getCardValueMap().get(key);
-
-    for(String keys: CardUtils.getCardKeys()){
-      if(CardUtils.getCardValueMap().get(keys).equals(value)){
-        this.symbol = keys;
-      }
-    }
+    this.symbol = findSymbol(value);
   }
-
 
   public char getSuit() {
     return suit;
@@ -58,8 +24,17 @@ public class Card {
     this.symbol = symbol;
   }
 
-  public int getValue() {
+  public Integer getValue() {
     return value;
+  }
+
+  private String findSymbol(int val){
+    for(String keys: CardUtils.getCardKeys()){
+      if(CardUtils.getCardValueMap().get(keys).equals(val)){
+        return keys;
+      }
+    }
+    return "key not found";
   }
 
   @Override
