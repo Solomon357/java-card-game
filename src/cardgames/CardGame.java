@@ -1,6 +1,7 @@
+package cardgames;
+
 import cards.Card;
 import cards.CardUtils;
-import cards.Suits;
 
 import java.util.ArrayList;
 import java.util.Collections;
