@@ -12,16 +12,11 @@ import java.util.Scanner;
 public class Main {
   public static void main(String[] args) {
 
-    Snap snap = new Snap("snap");
-
-//    Player john = new Player();
-//    Player dave = new Player();
-//    System.out.println(john.toString());
-//    System.out.println(dave.toString());
+    Snap snap = new Snap("snap", 2);
 
     snap.shuffleDeck();
 
-    snap.playSnap();
+    snap.playSnap(2);
 
 
 //    CardGame snap = new CardGame("Snap");
