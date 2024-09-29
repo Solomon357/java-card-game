@@ -1,6 +1,7 @@
 import cardgames.CardGame;
 import cardgames.Snap;
 import cards.Card;
+import user.Player;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -13,9 +14,15 @@ public class Main {
 
     Snap snap = new Snap("snap");
 
+//    Player john = new Player();
+//    Player dave = new Player();
+//    System.out.println(john.toString());
+//    System.out.println(dave.toString());
+
     snap.shuffleDeck();
 
     snap.playSnap();
+
 
 //    CardGame snap = new CardGame("Snap");
 //

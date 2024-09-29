@@ -39,7 +39,7 @@ public class Card {
 
   @Override
   public String toString() {
-    return "Card{" +
+    return "\n Card{" +
             "suit='" + suit + '\'' +
             ", symbol='" + symbol + '\'' +
             ", value=" + value +
