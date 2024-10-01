@@ -55,7 +55,7 @@ public class Snap extends CardGame{
       players.add(new Player());
     }
 
-    System.out.println("Welcome to the Snap game!");
+    System.out.println("Welcome to the Snap game with "+players.size()+ " Players!");
   }
 
   public ArrayList<Player> getPlayers(){
