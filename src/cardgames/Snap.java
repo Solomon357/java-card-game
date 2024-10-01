@@ -4,6 +4,7 @@ import cards.Card;
 import user.Player;
 
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 public class Snap extends CardGame{
 
@@ -22,7 +23,7 @@ public class Snap extends CardGame{
     }
 
     public void singlePlayerTask(){
-      System.out.println("Sorry! you didn't type \"snap\" fast enough! You lose!");
+      System.out.println("Sorry! you didn't type \"snap\" fast enough! Computer wins!");
       System.exit( 0);
     }
 
@@ -80,8 +81,9 @@ public class Snap extends CardGame{
 
     try{
       snapDeck.add(dealCard());
-
       System.out.println("Current SnapDeck\n"+ getSnapDeck());
+
+      computerPlays();
 
       while(true){
         System.out.println("Press Enter to deal another card");
@@ -100,8 +102,10 @@ public class Snap extends CardGame{
           handleWin(playerWin);
           break;
         }
+
+        computerPlays();
     }
-    }catch (NoSuchElementException e){
+    }catch (NoSuchElementException | InterruptedException e){
       System.err.println("All available cards have been dealt! Game Over");
       //return to userCommand main menu
     }
@@ -117,8 +121,8 @@ public class Snap extends CardGame{
 
     try{
       snapDeck.add(dealCard());
-
       System.out.println("Current SnapDeck "+ getSnapDeck() + "\n");
+
       while(true){
         playerIndex++;
         if(playerIndex >= playerNum){
@@ -146,6 +150,17 @@ public class Snap extends CardGame{
     } catch (NoSuchElementException e){
       System.err.println("All available cards have been dealt! Game Over");
       //return to userCommand main menu
+    }
+  }
+
+  private void computerPlays() throws InterruptedException {
+    System.out.println("Computer playing...");
+    snapDeck.add(dealCard());
+    TimeUnit.SECONDS.sleep(1);
+    System.out.println("Last Cards:\n" + getLastCards() + "\n");
+    if(snapDeck.getLast().getValue().equals(snapDeck.get(snapDeck.size()-2).getValue())){
+      System.out.println("Computer wins!");
+      System.exit(0);
     }
   }
 

@@ -19,8 +19,8 @@ public class CardGame {
    // Suits[] suits = Suits.values();
 
     for (char suit : suits) {
-      for (int j = 0; j < 13; j++) {
-        this.deckOfCards.add(new Card(suit, CardUtils.getCardKeys()[j]));
+      for (int i = 0; i < 13; i++) {
+        this.deckOfCards.add(new Card(suit, CardUtils.getCardKeys()[i]));
       }
     }
   }
