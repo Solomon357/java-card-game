@@ -1,10 +1,8 @@
 import cardgames.Snap;
 import java.util.Scanner;
-import java.util.Timer;
 import java.util.concurrent.TimeUnit;
 
 public class Main {
-
   public static void handleSnapGame(int input){
     if (input == 1) {
       Snap singlePlayerSnap = new Snap("snap");
@@ -16,6 +14,7 @@ public class Main {
       multiPlayerSnap.playSnap(input);
     }
   }
+
   public static void main(String[] args) throws InterruptedException {
 
     System.out.println("Welcome to the Java Card Game Suite");
@@ -32,7 +31,6 @@ public class Main {
     System.out.println(" Have fun :)\n");
     TimeUnit.SECONDS.sleep(2);
 
-
     Scanner input = new Scanner(System.in);
 
     int nextInput = 0;
@@ -48,28 +46,6 @@ public class Main {
 
     int userInput = nextInput;
 
-
     handleSnapGame(userInput);
-
-
-
-
-
-
-
-
-//    CardGame snap = new CardGame("Snap");
-//
-//    snap.sortDeckIntoSuits();
-//    System.out.println("Sorted deck into suits: " + snap.getDeck());
-//
-//    snap.sortDeckInNumberOrder();
-//    System.out.println("Sorted deck in number order: " + snap.getDeck());
-//
-//    snap.shuffleDeck();
-//    System.out.println("shuffled in random order" + snap.getDeck());
-//
-//    Card myCard = snap.dealCard();
-//    System.out.println("card dealt: " + myCard.toString());
   }
 }

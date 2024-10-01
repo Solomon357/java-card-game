@@ -26,7 +26,6 @@ public class Snap extends CardGame{
       System.exit( 0);
     }
 
-
     public void multiPlayerTask() {
       if(playerIndex == getPlayers().size()-1){
         System.out.println("Sorry! you didn't type \"snap\" fast enough! " + getPlayers().getFirst() + " wins!");
@@ -78,6 +77,7 @@ public class Snap extends CardGame{
     Scanner input = new Scanner(System.in);
     System.out.println("Press Enter to deal card");
     input.nextLine();
+
     try{
       snapDeck.add(dealCard());
 
@@ -148,6 +148,7 @@ public class Snap extends CardGame{
       //return to userCommand main menu
     }
   }
+
   public void handleWin(String input){
     if(input.equals("snap")){
       System.out.println("SNAP!! You win!");

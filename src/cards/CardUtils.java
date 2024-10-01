@@ -21,13 +21,7 @@ public class CardUtils {
           Map.entry("A", 14)
   ));
 
-  private final char[] suits = {'❤', '♠', '♦', '♣'};
-
   private static final String[] cardKeys = cardValueMap.keySet().toArray(new String[0]);
-
-  public char[] getSuits() {
-    return suits;
-  }
 
   public static String[] getCardKeys() {
     return cardKeys;

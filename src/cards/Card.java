@@ -16,25 +16,8 @@ public class Card {
     return suit;
   }
 
-//  public String getSymbol() {
-//    return symbol;
-//  }
-//
-//  public void setSymbol(String symbol) {
-//    this.symbol = symbol;
-//  }
-
   public Integer getValue() {
     return value;
-  }
-
-  private String findSymbol(int val){
-    for(String key: CardUtils.getCardKeys()){
-      if(CardUtils.getCardValueMap().get(key).equals(val)){
-        return key;
-      }
-    }
-    return "key not found";
   }
 
   @Override
