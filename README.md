@@ -7,7 +7,7 @@ A simple implementation of the classic card game "Snap" using Java. The game is 
 - Multiplayer mode
 - Automatic card shuffling and drawing
 - Snap detection based on consecutive matching cards
-- Text-based user interface
+- Text-based user interface (CLI)
 ## Requirements
 - Java 8 or higher
 ## How to Run
