@@ -29,7 +29,7 @@ A simple implementation of the classic card game "Snap" using Java. The game is 
 ## Game Rules
 - Each player draws one card at a time.
 - If the drawn card matches the previous card, the current player has to type "snap" in 2 seconds to win.
-- If the current player does NOT type "snap" in 2 seconds, they lose or the next player in the rotation wins.
+- If the current player does NOT type "snap" in 2 seconds, the next player in the rotation wins. In single player mode the computer wins
 - The game continues until the deck is exhausted or a player wins.
   
 ## Contributing
